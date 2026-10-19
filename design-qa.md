@@ -72,3 +72,8 @@ Header extérieur pleine largeur, contenu intérieur limité à 1240 px. Après 
 ## Logo Interreg POCTEFA — 19 octobre 2026
 
 Logo fourni `public/logos/poctefa.webp` intégré au footer FR/ES via institutionalLogo, largeur 300 px maximum et proportions conservées, sans bordure. Vérification visuelle ordinateur/mobile, image chargée, aucun débordement à 390 px. Check Astro, compilation et test réussis. Capture : `qa/footer-poctefa.png`.
+
+
+## Favicon — 19 octobre 2026
+
+Icônes ICO, PNG 16/32 px, Apple 180 px et manifeste ajoutés au layout FR/ES. Chemins Android corrigés vers `/favicon/`, nom INCLUS-IA et couleurs de charte dans le manifeste. Liens vérifiés dans le navigateur et ressources présentes dans le build des deux langues. Astro check, build et test réussis.

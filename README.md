@@ -64,6 +64,7 @@ src/
   styles/global.css          Thème Tailwind et styles responsive
 public/
   assets/                    Vidéo, image de secours et police Inter
+  favicon/                   Icônes navigateur, Apple et manifeste web
   logos/
     partners/                Logos des cinq partenaires
     associated/              Logos des sept associés
@@ -120,6 +121,12 @@ Les logos des partenaires suivent cet ordre : Gobierno de Navarra, TASUBINSA, Fu
 Les associés suivent cet ordre : CRIC Pyrénées, ADAPEI64, LesPEP64, Cap Emploi Béarn, IA Pau, French Tech Pau Béarn, NASERTIC.
 
 Pour ajouter un partenaire ou un associé, ajouter son contenu dans **les deux JSON** et son chemin au même index dans le tableau de logos correspondant. Une valeur `null` affiche un emplacement provisoire pour ces logos. Si `institutionalLogo` vaut `null`, le logo institutionnel est masqué.
+
+## Favicon
+
+Les icônes du projet sont dans `public/favicon/` et déclarées dans le layout commun `src/layouts/BaseLayout.astro` pour les deux langues : ICO, PNG 16/32 px, icône Apple et manifeste web. Les icônes Android 192/512 px sont référencées dans `public/favicon/site.webmanifest`.
+
+Pour les remplacer, conserver les noms des fichiers ou mettre à jour les chemins du layout et du manifeste. Si l’ancienne icône reste visible, effectuer un rechargement forcé ou rouvrir l’onglet : les navigateurs peuvent conserver les favicons en cache.
 
 ## Personnaliser le style et les interactions
 
