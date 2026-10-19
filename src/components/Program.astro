@@ -1,0 +1,40 @@
+---
+import SectionIntro from "./SectionIntro.astro";
+import type { Messages } from "../i18n";
+interface Props {
+  t: Messages;
+}
+const { t } = Astro.props;
+---
+
+<section id="program" class="page-shell section-space">
+  <SectionIntro title={t.program.title} text={t.program.intro} />
+  <div class="program-grid grid grid-cols-3 gap-x-9 gap-y-0">
+    {
+      t.program.steps.map((step) => (
+        <article class="program-step" data-reveal>
+          <div class="step-header mb-[35px] flex items-center">
+            <strong class="text-[22px] leading-[normal] font-medium tracking-[-.5px]">
+              {step.year}
+            </strong>
+          </div>
+          <>
+            <h3 class="mb-4 text-[25px] leading-[normal]">{step.title}</h3>
+            <p class="text-sm text-muted">{step.text}</p>
+          </>
+          <details class="program-details">
+            <>
+              <summary class="cursor-pointer text-xs font-semibold leading-[1.6]">
+                {step.detail}
+              </summary>
+              <p class="pt-4 text-[13px] text-muted">{step.body}</p>
+            </>
+          </details>
+        </article>
+      ))
+    }
+  </div>
+  <p class="program-note mt-[38px] pt-[30px] text-[11px] text-muted">
+    {t.program.note}
+  </p>
+</section>

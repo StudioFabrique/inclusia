@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "title": "INCLUS-IA — Le numérique ouvre les possibles",
+    "description": "Un projet transfrontalier pour favoriser la formation au numérique et à l’intelligence artificielle et l’inclusion professionnelle des personnes en situation de handicap."
+  },
+  "nav": [
+    "Accueil",
+    "Le projet",
+    "Le programme",
+    "Partenaires",
+    "Contact"
+  ],
+  "ui": {
+    "skip": "Aller au contenu",
+    "menu": "Ouvrir le menu",
+    "close": "Fermer",
+    "language": "Choisir la langue",
+    "top": "Retour en haut",
+    "logo": "Emplacement logo",
+    "discover": "Découvrir le projet",
+    "contact": "Parlons du projet",
+    "video": "Voir la vidéo",
+    "videoTag": "Vidéo de présentation",
+    "videoTitle": "Découvrir INCLUS-IA en images.",
+    "videoText": "Découvrez le projet INCLUS-IA dans cette vidéo de présentation.",
+    "videoCta": "Explorer le projet",
+    "learn": "En savoir plus",
+    "duration": "3 ans de coopération",
+    "territories": "Navarre & Pyrénées-Atlantiques",
+    "application": "Accéder à l’application",
+    "applicationPending": "Lien de l’application à renseigner",
+    "pauseVideo": "Mettre en pause",
+    "resumeVideo": "Reprendre la vidéo"
+  },
+  "hero": {
+    "title": "Le numérique ouvre les possibles.",
+    "text": "Former, accompagner, inclure. Ensemble, faisons du numérique et de l’intelligence artificielle de nouvelles opportunités d’emploi pour les personnes en situation de handicap."
+  },
+  "facts": [
+    {
+      "value": "2026 - 2028",
+      "label": "Période du projet"
+    },
+    {
+      "value": "50",
+      "label": "Participants visés par le pilote"
+    },
+    {
+      "value": "1,72 M€",
+      "label": "Budget prévisionnel"
+    },
+    {
+      "value": "65 %",
+      "label": "Cofinancement européen FEDER"
+    }
+  ],
+  "objectives": {
+    "title": "Des compétences nouvelles. Des parcours qui s’ouvrent.",
+    "intro": "Réduire la fracture numérique et faire émerger de nouvelles perspectives professionnelles, avec une formation pensée pour les personnes et les réalités du terrain.",
+    "items": [
+      {
+        "title": "Rendre le numérique accessible",
+        "text": "Construire des contenus et des méthodes adaptés aux besoins des personnes en situation de handicap, en lien avec les compétences recherchées par les entreprises."
+      },
+      {
+        "title": "Créer des passerelles vers l’emploi",
+        "text": "Associer apprentissage, mise en pratique et accompagnement individualisé pour préparer l’accès aux métiers de la transformation numérique et de l’IA."
+      },
+      {
+        "title": "Faire grandir un réseau sans frontières",
+        "text": "Partager les expériences entre la Navarre et les Pyrénées-Atlantiques et construire un modèle commun, transférable à d’autres territoires."
+      }
+    ]
+  },
+  "project": {
+    "title": "Deux territoires. Une même conviction.",
+    "text": "La transformation numérique change le monde du travail. INCLUS-IA veut en faire une chance pour les personnes en situation de handicap éloignées de l’emploi.",
+    "detail": "Porté par le Gouvernement de Navarre, le projet réunit des acteurs de la formation, de l’inclusion et des technologies numériques. Ensemble, ils conçoivent et expérimentent une offre transfrontalière de formation et d’accompagnement au numérique et à l’intelligence artificielle.",
+    "points": [
+      "Des apprentissages accessibles et adaptés",
+      "Une formation reliée aux besoins des entreprises",
+      "Une coopération durable entre acteurs des deux territoires"
+    ],
+    "territoryTitle": "La coopération, au-delà des frontières",
+    "left": "Navarre",
+    "right": "Pyrénées-Atlantiques",
+    "foot": "Un parcours commun vers l’inclusion professionnelle"
+  },
+  "program": {
+    "title": "Apprendre. Expérimenter. Avancer.",
+    "intro": "Du diagnostic aux expériences pilotes, un parcours qui relie les compétences numériques au monde professionnel.",
+    "note": "Calendrier prévisionnel du projet · du 1er janvier 2026 au 31 décembre 2028. Les modalités des parcours seront précisées par les partenaires.",
+    "steps": [
+      {
+        "year": "2026",
+        "title": "Concevoir ensemble",
+        "text": "Identifier les besoins des participants et les opportunités du marché. Concevoir le parcours, adapter les contenus et préparer les formateurs et les accompagnateurs.",
+        "detail": "Une pédagogie partagée",
+        "body": "Les partenaires mettent en commun leurs pratiques pour construire des contenus théoriques et pratiques accessibles, ainsi que des outils numériques de formation."
+      },
+      {
+        "year": "2027-2028",
+        "title": "Former et accompagner",
+        "text": "Déployer les expériences pilotes dans les deux territoires, combiner formation en présentiel et en ligne, et préparer la mise en pratique en entreprise.",
+        "detail": "De la formation à l’expérience",
+        "body": "EL MOLINO, TASUBINSA et STEP adaptent les parcours à leurs publics. L’accompagnement et les stages doivent permettre d’appliquer les compétences acquises dans un contexte professionnel."
+      },
+      {
+        "year": "2028",
+        "title": "Évaluer et transmettre",
+        "text": "Évaluer les expériences, partager les enseignements et diffuser les résultats pour prolonger la coopération au-delà du projet.",
+        "detail": "Une ambition qui dure",
+        "body": "Une feuille de route commune doit poser les bases d’un réseau transfrontalier pour l’inclusion professionnelle dans la transformation numérique et l’IA."
+      }
+    ]
+  },
+  "partners": {
+    "title": "Des expertises qui se complètent.",
+    "intro": "Cinq partenaires réunis autour d’un engagement commun : ouvrir l’accès à la formation et à l’emploi.",
+    "lead": "Chef de file · Navarre",
+    "associate": "Avec l’appui des partenaires associés",
+    "items": [
+      {
+        "name": "Gobierno de Navarra",
+        "role": "Coordination et pilotage du projet",
+        "place": "Navarre · ES"
+      },
+      {
+        "name": "TASUBINSA",
+        "role": "Formation et inclusion professionnelle",
+        "place": "Navarre · ES"
+      },
+      {
+        "name": "Fundación TeReSA",
+        "role": "Contenus numériques et ingénierie de formation",
+        "place": "Navarre · ES"
+      },
+      {
+        "name": "STEP",
+        "role": "Formation et expériences pilotes en France",
+        "place": "Pyrénées-Atlantiques · FR"
+      },
+      {
+        "name": "EL MOLINO",
+        "role": "Formation adaptée et évaluation des pilotes",
+        "place": "Fundación Ciganda Ferrer · ES"
+      }
+    ],
+    "associated": [
+      "CRIC Pyrénées",
+      "ADAPEI64",
+      "LesPEP64",
+      "Cap Emploi Béarn",
+      "IA Pau",
+      "French Tech Pau Béarn",
+      "NASERTIC"
+    ]
+  },
+  "contact": {
+    "title": "Et si nous ouvrions de nouvelles perspectives, ensemble ?",
+    "text": "Vous représentez une entreprise, un organisme de formation ou un acteur de l’inclusion ? Vous souhaitez en savoir plus sur INCLUS-IA ? Échangeons.",
+    "button": "Contacter la coordination",
+    "caption": "Coordination du projet · Gouvernement de Navarre",
+    "emailLabel": "Écrivez-nous",
+    "email": "poctefa_empleo@outlook.es",
+    "subject": "Demande d’information — INCLUS-IA"
+  },
+  "footer": {
+    "tagline": "Le numérique au service de l’inclusion.",
+    "funding": "Projet INCLUS-IA · EFA255/06 · Interreg VI-A Espagne–France–Andorre POCTEFA 2021–2027. Cofinancement de 65 % par le Fonds européen de développement régional (FEDER).",
+    "logos": "Emplacement du logo institutionnel",
+    "copyright": "© 2026 INCLUS-IA",
+    "back": "Retour en haut",
+    "privacy": "Cette page n’utilise aucun outil de suivi. Le bouton de contact ouvre votre messagerie.",
+    "institutionalLogo": "Logo Interreg POCTEFA / Union européenne"
+  }
+}

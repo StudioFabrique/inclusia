@@ -1,0 +1,71 @@
+---
+import Button from "./Button.astro";
+import { siteConfig } from "../config";
+import type { Messages } from "../i18n";
+interface Props {
+  t: Messages;
+}
+const { t } = Astro.props;
+---
+
+<section id="home" class="home-section" aria-labelledby="hero-title">
+  <div
+    class="video-frame relative isolate aspect-video overflow-hidden rounded-panel bg-paper"
+  >
+    <video
+      id="hero-video"
+      class="absolute inset-0 h-full w-full object-contain"
+      src={siteConfig.videoUrl}
+      poster={siteConfig.posterUrl}
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      aria-hidden="true">
+    </video>
+    <div
+      class="video-shade pointer-events-none absolute inset-x-0 bottom-0 top-[40%] z-10 bg-linear-to-t from-ink to-transparent"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="video-toolbar absolute z-20 flex items-center justify-between gap-6">
+      <button id="watch-video" class="watch flex items-center gap-3 text-paper">
+        <span class="play-icon" aria-hidden="true">▶</span>
+        <!-- <span>{t.ui.video}</span> -->
+        <span class="video-caption text-[10px] text-paper/80">{t.ui.videoTag}</span>
+      </button>
+
+      <div class="video-toolbar  flex items-center justify-between gap-2">
+      <button
+        id="toggle-hero-video"
+        class="video-pause"
+        type="button"
+        aria-controls="hero-video"
+        data-pause-label={t.ui.pauseVideo}
+        data-resume-label={t.ui.resumeVideo}>{t.ui.resumeVideo}</button
+      >
+      <Button href="#project" label={t.ui.discover} class="hero-cta shrink-0" />
+</div>
+    </div>
+  </div>
+  <div class="hero-intro rounded-panel bg-ink text-paper">
+    <h1 id="hero-title">{t.hero.title}</h1>
+    <div class="hero-intro-bottom flex items-center justify-between gap-[55px]">
+      <p class=" text-[17px] text-paper/85">{t.hero.text}</p>
+    </div>
+  </div>
+</section>
+<div id="facts" class="page-shell facts grid grid-cols-4 border-b border-line">
+  {
+    t.facts.map((fact) => (
+      <div class="fact">
+        <>
+          <strong class="block font-medium tracking-[-1.5px]">
+            {fact.value}
+          </strong>
+          <span class="mt-2 block text-xs text-muted">{fact.label}</span>
+        </>
+      </div>
+    ))
+  }
+</div>

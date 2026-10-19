@@ -1,0 +1,5 @@
+---
+interface Props { title: string; text: string }
+const { title, text } = Astro.props;
+---
+<div class="section-intro" data-reveal><h2>{title}</h2><p class="text-[15px] text-muted">{text}</p></div>

@@ -1,0 +1,38 @@
+---
+import Brand from "./Brand.astro";
+import { siteConfig } from "../config";
+import type { Messages } from "../i18n";
+interface Props {
+  t: Messages;
+}
+const { t } = Astro.props;
+---
+
+<footer class="page-shell footer">
+  <div class="footer-top flex justify-between gap-10">
+    <div>
+      <Brand />
+      <p class="mt-3 text-xs text-muted">{t.footer.tagline}</p>
+    </div>
+    {siteConfig.institutionalLogo && (
+      <img
+        src={siteConfig.institutionalLogo}
+        alt={t.footer.institutionalLogo}
+        width="750"
+        height="259"
+        loading="lazy"
+        class="institutional-logo object-contain"
+      />
+    )}
+  </div>
+  <p class="mt-[35px] max-w-[740px] text-[11px] text-muted">
+    {t.footer.funding}
+  </p>
+  <div class="footer-bottom mt-[30px] flex justify-between gap-[25px] border-t border-line pt-[22px] text-[10px] leading-[1.6] text-muted">
+    <span>{t.footer.copyright}</span><span class="max-w-[460px]"
+      >{t.footer.privacy}</span
+    ><a class="whitespace-nowrap" href="#home"
+      >{t.footer.back} <span aria-hidden="true">↑</span></a
+    >
+  </div>
+</footer>

@@ -1,0 +1,32 @@
+---
+import SectionIntro from './SectionIntro.astro';
+import { siteConfig } from '../config';
+import type { Messages } from '../i18n';
+interface Props { t: Messages }
+const { t } = Astro.props;
+const cardColors = ['bg-pale', 'bg-blush', 'bg-paper'];
+---
+<section id="objectives" class="page-shell section-space">
+  <SectionIntro title={t.objectives.title} text={t.objectives.intro} />
+  <div class="objectives-grid grid grid-cols-3 gap-[22px]">
+    {t.objectives.items.map((item, i) => <article class:list={['objective flex flex-col justify-center rounded-panel transition-transform duration-300 hover:-translate-y-[7px]', cardColors[i]]} data-reveal><h3>{item.title}</h3><p class="text-[13px] leading-[1.7] text-ink/80">{item.text}</p></article>)}
+  </div>
+</section>
+<section id="project" class="section-space bg-paper">
+  <div class="page-shell project-grid grid grid-cols-2 items-center gap-20" data-reveal>
+    <div class="project-copy">
+      <h2>{t.project.title}</h2>
+      <p class="project-lead">{t.project.text}</p><p>{t.project.detail}</p>
+      <ul class="project-points">
+        {t.project.points.map(point => <li><span class="mr-[13px]" aria-hidden="true">✓</span>{point}</li>)}
+      </ul>
+    </div>
+    <div class="territory relative overflow-hidden rounded-panel bg-ink">
+      <img class="absolute inset-0 h-full w-full object-cover brightness-65" src={siteConfig.posterUrl} alt="" loading="lazy" width="1536" height="1024" />
+      <div class="territory-overlay absolute inset-0 flex flex-col justify-between bg-linear-to-t from-ink/75 to-transparent text-white">
+        <div class="mt-auto pt-20"><h3>{t.project.left}</h3><span class="my-3 block text-4xl text-blush" aria-hidden="true">↔</span><h3>{t.project.right}</h3></div>
+        <p class="pt-[45px] text-xs text-paper">{t.project.foot}</p>
+      </div>
+    </div>
+  </div>
+</section>

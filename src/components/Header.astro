@@ -1,0 +1,81 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import Brand from "./Brand.astro";
+import Button from "./Button.astro";
+import { locales, type Locale, type Messages } from "../i18n";
+import { siteConfig, sectionIds } from "../config";
+interface Props {
+  locale: Locale;
+  t: Messages;
+}
+const { locale, t } = Astro.props;
+---
+
+<header
+  id="site-header"
+  class="site-header sticky top-0 z-30"
+>
+  <div class="header-inner flex items-center">
+  <Brand label={`INCLUS-IA — ${t.nav[0]}`} />
+  <button
+    id="menu-toggle"
+    class="menu-toggle"
+    aria-expanded="false"
+    aria-controls="navigation">{t.ui.menu}</button
+  >
+  <nav
+    id="navigation"
+    class="site-nav"
+    aria-label={locale === "fr"
+      ? "Navigation principale"
+      : "Navegación principal"}
+  >
+    <div class="nav-links">
+      {
+        t.nav.map((label, i) => (
+          <a
+            href={`#${sectionIds[i]}`}
+            aria-current={i === 0 ? "location" : undefined}
+          >
+            {label}
+          </a>
+        ))
+      }
+      <a class="mobile-application" href={siteConfig.applicationUrl}
+        >{t.ui.application} <span aria-hidden="true">↗</span></a
+      >
+    </div>
+  </nav>
+  <div
+    class="languages flex shrink-0 items-center gap-[5px] text-[11px]"
+    role="group"
+    aria-label={t.ui.language}
+  >
+    {
+      locales.map((language, i) => (
+        <>
+          {i > 0 && (
+            <span class="text-ink/25" aria-hidden="true">
+              /
+            </span>
+          )}
+          <a
+            href={getRelativeLocaleUrl(language)}
+            lang={language}
+            hreflang={language}
+            data-locale-link
+            aria-current={locale === language ? "page" : undefined}
+          >
+            {language.toUpperCase()}
+          </a>
+        </>
+      ))
+    }
+  </div>
+  <Button
+    href={siteConfig.applicationUrl}
+    label={t.ui.application}
+    class="header-application"
+  />
+  </div>
+</header>

@@ -1,0 +1,53 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import "../styles/global.css";
+import { locales, type Locale, type Messages } from "../i18n";
+interface Props {
+  locale: Locale;
+  t: Messages;
+}
+const { locale, t } = Astro.props;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#DD6365" />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+    <meta property="og:title" content={t.meta.title} />
+    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:locale" content={locale === "fr" ? "fr_FR" : "es_ES"} />
+    {
+      locales.map((language) => (
+        <link
+          rel="alternate"
+          hreflang={language}
+          href={getRelativeLocaleUrl(language)}
+        />
+      ))
+    }
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={getRelativeLocaleUrl("fr")}
+    />
+    <link rel="icon" href="data:," />
+    <link
+      rel="preload"
+      href="/assets/InterVariable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t.ui.skip}</a>
+    <slot />
+    <script>
+      import "../scripts/interactions";
+    </script>
+  </body>
+</html>

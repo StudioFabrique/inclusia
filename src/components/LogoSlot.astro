@@ -1,0 +1,7 @@
+---
+interface Props { src?: string | null; name: string; placeholder: string; class?: string }
+const { src, name, placeholder, class: className = '' } = Astro.props;
+---
+<div class:list={['logo-slot flex items-center justify-center rounded-md border border-ink/25 text-center text-[10px] uppercase tracking-[.09em] text-ink/60', className, src ? 'border-solid' : 'border-dashed']}>
+  {src ? <img class="h-full w-full object-contain p-3" src={src} alt={name} loading="lazy" /> : <span>{placeholder}</span>}
+</div>

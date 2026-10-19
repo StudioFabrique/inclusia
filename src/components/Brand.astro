@@ -1,0 +1,11 @@
+---
+import { siteConfig } from "../config";
+interface Props {
+  label?: string;
+}
+const { label = "INCLUS-IA" } = Astro.props;
+---
+
+<a class="brand shrink-0" href="#home" aria-label={label}>
+  <img src={siteConfig.brandLogo} alt="INCLUS-IA" width="384" height="103" class="brand-image" />
+</a>

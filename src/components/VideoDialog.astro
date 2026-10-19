@@ -1,0 +1,16 @@
+---
+import Button from './Button.astro';
+import { siteConfig } from '../config';
+import type { Messages } from '../i18n';
+interface Props { t: Messages }
+const { t } = Astro.props;
+---
+<dialog id="video-dialog" class="video-dialog" aria-labelledby="video-title">
+  <button id="close-dialog" class="dialog-close absolute right-[15px] top-[15px] z-10 flex size-[38px] items-center justify-center rounded-full bg-white text-[25px]" aria-label={t.ui.close}>×</button>
+  <video id="dialog-player" class="block max-h-[70svh] w-full bg-black object-contain" src={siteConfig.videoUrl} controls playsinline preload="none" aria-labelledby="video-title"></video>
+  <div class="dialog-body p-[35px]">
+    <h2 id="video-title" class="mb-[18px] text-[32px]">{t.ui.videoTitle}</h2>
+    <p class="mb-[25px] text-sm text-muted">{t.ui.videoText}</p>
+    <Button id="dialog-discover" href="#project" label={t.ui.videoCta} />
+  </div>
+</dialog>

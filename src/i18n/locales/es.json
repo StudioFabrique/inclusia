@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "title": "INCLUS-IA — Lo digital abre posibilidades",
+    "description": "Un proyecto transfronterizo para impulsar la formación digital y en inteligencia artificial y la inclusión laboral de las personas con discapacidad."
+  },
+  "nav": [
+    "Inicio",
+    "El proyecto",
+    "El programa",
+    "Entidades socias",
+    "Contacto"
+  ],
+  "ui": {
+    "skip": "Ir al contenido",
+    "menu": "Abrir el menú",
+    "close": "Cerrar",
+    "language": "Elegir idioma",
+    "top": "Volver arriba",
+    "logo": "Espacio para logotipo",
+    "discover": "Descubrir el proyecto",
+    "contact": "Hablemos del proyecto",
+    "video": "Ver el vídeo",
+    "videoTag": "Vídeo de presentación",
+    "videoTitle": "Descubrir INCLUS-IA en imágenes.",
+    "videoText": "Descubre el proyecto INCLUS-IA en este vídeo de presentación.",
+    "videoCta": "Explorar el proyecto",
+    "learn": "Más información",
+    "duration": "3 años de cooperación",
+    "territories": "Navarra y Pirineos Atlánticos",
+    "application": "Acceder a la aplicación",
+    "applicationPending": "Enlace de la aplicación pendiente",
+    "pauseVideo": "Pausar el vídeo",
+    "resumeVideo": "Reanudar el vídeo"
+  },
+  "hero": {
+    "title": "Lo digital abre posibilidades.",
+    "text": "Formar, acompañar, incluir. Juntos, hagamos de la digitalización y la inteligencia artificial nuevas oportunidades de empleo para las personas con discapacidad."
+  },
+  "facts": [
+    {
+      "value": "2026 - 2028",
+      "label": "Periodo del proyecto"
+    },
+    {
+      "value": "50",
+      "label": "Participantes previstos en el piloto"
+    },
+    {
+      "value": "1,72 M€",
+      "label": "Presupuesto previsto"
+    },
+    {
+      "value": "65 %",
+      "label": "Cofinanciación europea FEDER"
+    }
+  ],
+  "objectives": {
+    "title": "Nuevas competencias. Caminos que se abren.",
+    "intro": "Reducir la brecha digital y generar nuevas perspectivas profesionales, con una formación centrada en las personas y en la realidad del territorio.",
+    "items": [
+      {
+        "title": "Hacer accesible lo digital",
+        "text": "Crear contenidos y metodologías adaptados a las necesidades de las personas con discapacidad, en conexión con las competencias que demandan las empresas."
+      },
+      {
+        "title": "Tender puentes hacia el empleo",
+        "text": "Combinar aprendizaje, práctica y acompañamiento individualizado para preparar el acceso a los empleos de la transformación digital y la IA."
+      },
+      {
+        "title": "Impulsar una red sin fronteras",
+        "text": "Compartir experiencias entre Navarra y Pirineos Atlánticos y construir un modelo común, transferible a otros territorios."
+      }
+    ]
+  },
+  "project": {
+    "title": "Dos territorios. Una misma convicción.",
+    "text": "La transformación digital está cambiando el mundo laboral. INCLUS-IA quiere convertirla en una oportunidad para las personas con discapacidad alejadas del empleo.",
+    "detail": "Liderado por el Gobierno de Navarra, el proyecto reúne a entidades de formación, inclusión y tecnologías digitales. Juntas diseñan y ponen a prueba una oferta transfronteriza de formación y acompañamiento en digitalización e inteligencia artificial.",
+    "points": [
+      "Aprendizajes accesibles y adaptados",
+      "Formación vinculada a las necesidades empresariales",
+      "Cooperación duradera entre ambos territorios"
+    ],
+    "territoryTitle": "La cooperación, más allá de las fronteras",
+    "left": "Navarra",
+    "right": "Pirineos Atlánticos",
+    "foot": "Un recorrido común hacia la inclusión laboral"
+  },
+  "program": {
+    "title": "Aprender. Experimentar. Avanzar.",
+    "intro": "Del diagnóstico a las experiencias piloto, un itinerario que conecta las competencias digitales con el mundo profesional.",
+    "note": "Calendario previsto del proyecto · del 1 de enero de 2026 al 31 de diciembre de 2028. Las entidades socias concretarán las modalidades de los itinerarios.",
+    "steps": [
+      {
+        "year": "2026",
+        "title": "Diseñar juntos",
+        "text": "Identificar las necesidades de las personas participantes y las oportunidades del mercado. Diseñar el itinerario, adaptar contenidos y preparar a formadores y acompañantes.",
+        "detail": "Una pedagogía compartida",
+        "body": "Las entidades ponen en común sus prácticas para crear contenidos teóricos y prácticos accesibles y herramientas digitales de formación."
+      },
+      {
+        "year": "2027–2028",
+        "title": "Formar y acompañar",
+        "text": "Desarrollar experiencias piloto en ambos territorios, combinar formación presencial y en línea y preparar la aplicación práctica en las empresas.",
+        "detail": "De la formación a la experiencia",
+        "body": "EL MOLINO, TASUBINSA y STEP adaptan los itinerarios a sus públicos. El acompañamiento y las prácticas permitirán aplicar las competencias adquiridas en un entorno profesional."
+      },
+      {
+        "year": "2028",
+        "title": "Evaluar y compartir",
+        "text": "Evaluar las experiencias, compartir aprendizajes y difundir los resultados para dar continuidad a la cooperación más allá del proyecto.",
+        "detail": "Una ambición duradera",
+        "body": "Una hoja de ruta común sentará las bases de una red transfronteriza para la inclusión laboral en el ámbito de la transformación digital y la IA."
+      }
+    ]
+  },
+  "partners": {
+    "title": "Experiencias que se complementan.",
+    "intro": "Cinco entidades unidas por un compromiso común: abrir el acceso a la formación y al empleo.",
+    "lead": "Entidad jefa de fila · Navarra",
+    "associate": "Con el apoyo de las entidades asociadas",
+    "items": [
+      {
+        "name": "Gobierno de Navarra",
+        "role": "Coordinación y dirección del proyecto",
+        "place": "Navarra · ES"
+      },
+      {
+        "name": "TASUBINSA",
+        "role": "Formación e inclusión laboral",
+        "place": "Navarra · ES"
+      },
+      {
+        "name": "Fundación TeReSA",
+        "role": "Contenidos digitales y diseño formativo",
+        "place": "Navarra · ES"
+      },
+      {
+        "name": "STEP",
+        "role": "Formación y experiencias piloto en Francia",
+        "place": "Pirineos Atlánticos · FR"
+      },
+      {
+        "name": "EL MOLINO",
+        "role": "Formación adaptada y evaluación de pilotos",
+        "place": "Fundación Ciganda Ferrer · ES"
+      }
+    ],
+    "associated": [
+      "CRIC Pyrénées",
+      "ADAPEI64",
+      "LesPEP64",
+      "Cap Emploi Béarn",
+      "IA Pau",
+      "French Tech Pau Béarn",
+      "NASERTIC"
+    ]
+  },
+  "contact": {
+    "title": "¿Y si abriéramos nuevas perspectivas juntos?",
+    "text": "¿Representas a una empresa, un centro de formación o una entidad de inclusión? ¿Quieres saber más sobre INCLUS-IA? Hablemos.",
+    "button": "Contactar con la coordinación",
+    "caption": "Coordinación del proyecto · Gobierno de Navarra",
+    "emailLabel": "Escríbenos",
+    "email": "poctefa_empleo@outlook.es",
+    "subject": "Solicitud de información — INCLUS-IA"
+  },
+  "footer": {
+    "tagline": "Lo digital al servicio de la inclusión.",
+    "funding": "Proyecto INCLUS-IA · EFA255/06 · Interreg VI-A España–Francia–Andorra POCTEFA 2021–2027. Cofinanciado en un 65 % por el Fondo Europeo de Desarrollo Regional (FEDER).",
+    "logos": "Espacio para el logotipo institucional",
+    "copyright": "© 2026 INCLUS-IA",
+    "back": "Volver arriba",
+    "privacy": "Esta página no utiliza herramientas de seguimiento. El botón de contacto abre tu aplicación de correo.",
+    "institutionalLogo": "Logotipo Interreg POCTEFA / Unión Europea"
+  }
+}

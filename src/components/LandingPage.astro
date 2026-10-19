@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "./Header.astro";
+import Hero from "./Hero.astro";
+import Project from "./Project.astro";
+import Program from "./Program.astro";
+import Partners from "./Partners.astro";
+import Contact from "./Contact.astro";
+import Footer from "./Footer.astro";
+import VideoDialog from "./VideoDialog.astro";
+import { getLocale, getMessages } from "../i18n";
+const locale = getLocale(Astro.currentLocale);
+const t = getMessages(locale);
+---
+
+<BaseLayout locale={locale} t={t}>
+  <Header locale={locale} t={t} />
+  <main id="main">
+    <Hero t={t} />
+    <Project t={t} />
+    <Program t={t} />
+    <Partners t={t} />
+    <Contact t={t} />
+  </main>
+  <Footer t={t} />
+  <VideoDialog t={t} />
+</BaseLayout>

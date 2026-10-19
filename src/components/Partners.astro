@@ -1,0 +1,59 @@
+---
+import SectionIntro from "./SectionIntro.astro";
+import LogoSlot from "./LogoSlot.astro";
+import { siteConfig } from "../config";
+import type { Messages } from "../i18n";
+interface Props {
+  t: Messages;
+}
+const { t } = Astro.props;
+---
+
+<section id="partners" class="section-space bg-paper">
+  <div class="page-shell">
+    <SectionIntro title={t.partners.title} text={t.partners.intro} />
+    <div class="partners-grid grid grid-cols-5 gap-[15px]">
+      {
+        t.partners.items.map((partner, i) => (
+          <article
+            class="partner rounded-xl border border-line bg-white"
+            data-reveal
+          >
+            <LogoSlot
+              src={siteConfig.partnerLogos[i]}
+              name={partner.name}
+              placeholder={t.ui.logo}
+            />
+            <>
+              <h3>{partner.name}</h3>
+              <p>{partner.role}</p>
+              <small>{i === 0 ? t.partners.lead : partner.place}</small>
+            </>
+          </article>
+        ))
+      }
+    </div>
+    <div class="associated mt-[45px] border-t border-line pt-[30px]">
+      <h3 class="mb-5 text-[13px] font-semibold tracking-normal">
+        {t.partners.associate}
+      </h3>
+      <div
+        id="associated-list"
+        class="associated-grid grid grid-cols-7 gap-[15px]"
+      >
+        {
+          t.partners.associated.map((name, i) => (
+            <article class="associated-partner min-w-0 rounded-xl border border-line bg-white p-[15px]">
+              <LogoSlot
+                src={siteConfig.associatedLogos[i]}
+                name={name}
+                placeholder={t.ui.logo}
+              />
+              <h4 class="text-xs font-medium leading-[1.5]">{name}</h4>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
