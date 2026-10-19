@@ -252,10 +252,32 @@
     @apply mb-[18px] h-[90px];
   }
   .contact {
-    @apply mx-[14px] my-[14px] pb-[50px] pt-20;
+    @apply mx-auto my-[14px] w-[calc(100%-28px)] max-w-[1400px] pb-[50px] pt-20;
   }
   .contact h2 {
     @apply text-[clamp(39px,5.5vw,76px)] leading-[1.07];
+  }
+  .contact .page-shell,
+  .contact-bottom {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .contact-actions {
+    @apply mt-[35px] flex flex-wrap items-center justify-between gap-6;
+  }
+  .contact-email {
+    @apply min-w-0 max-w-full;
+    overflow-wrap: anywhere;
+  }
+  .contact .button {
+    @apply min-w-0 max-w-full;
+  }
+  .contact .button > span:first-child {
+    @apply min-w-0;
+    overflow-wrap: anywhere;
+  }
+  .contact .button > span:last-child {
+    @apply shrink-0;
   }
   .footer {
     @apply pb-[25px] pt-[55px];
@@ -484,10 +506,10 @@
     @apply text-[9px];
   }
   .contact {
-    @apply mx-[10px] my-[10px] pb-[35px] pt-[55px];
+    @apply mx-auto my-[10px] w-[calc(100%-20px)] pb-[35px] pt-[45px];
   }
   .contact h2 {
-    @apply text-[43px] tracking-[-1.9px];
+    @apply text-[clamp(30px,8vw,43px)] tracking-[-.045em];
   }
   .contact-bottom {
     @apply mt-[30px] block;
@@ -498,11 +520,17 @@
   .contact-bottom small {
     @apply text-[10px];
   }
-  .contact .button {
-    @apply mt-7 px-[22px] py-5 text-xs;
+  .contact .page-shell {
+    @apply w-[calc(100%-40px)];
   }
-  .contact .page-shell > a {
-    @apply mt-[26px] text-xs;
+  .contact-actions {
+    @apply mt-[26px] flex-col items-stretch gap-[22px];
+  }
+  .contact-email {
+    @apply self-start text-xs;
+  }
+  .contact .button {
+    @apply m-0 w-full gap-4 px-[18px] py-[18px] text-xs;
   }
   .footer {
     @apply pb-[23px] pt-10;

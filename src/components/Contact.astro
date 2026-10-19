@@ -8,27 +8,18 @@ const { t } = Astro.props;
 const mailto = `mailto:${t.contact.email}?subject=${encodeURIComponent(t.contact.subject)}`;
 ---
 
-<section id="contact" class="contact rounded-panel bg-pale text-ink max-w-[1400px] mx-auto">
+<section id="contact" class="contact rounded-panel bg-pale text-ink">
   <div class="page-shell">
     <h2 class="max-w-[1000px]" data-reveal>{t.contact.title}</h2>
-    <div
-      class="contact-bottom mt-10 flex items-center justify-between gap-[70px]"
-    >
-      <div>
-        <p class="max-w-[570px] text-[15px]">{t.contact.text}</p><small
-          class="mt-6 block text-[11px]">{t.contact.caption}</small>
-      </div>
-      <Button
-        id="contact-link"
-        href={mailto}
-        label={t.contact.button}
-        variant="dark"
-        class="shrink-0"
-      />
+    <div class="contact-bottom mt-10">
+      <p class="max-w-[570px] text-[15px]">{t.contact.text}</p>
+      <small class="mt-6 block text-[11px]">{t.contact.caption}</small>
     </div>
-    <a
-      class="mt-[35px] inline-block border-b border-ink/40 pb-[7px] text-[13px]"
-      href={mailto}>{t.contact.email}</a
-    >
+    <div class="contact-actions">
+      <a class="contact-email border-b border-ink/40 pb-[7px] text-[13px]" href={mailto}>
+        {t.contact.email}
+      </a>
+      <Button id="contact-link" href={mailto} label={t.contact.button} variant="dark" />
+    </div>
   </div>
 </section>

@@ -144,6 +144,8 @@ La police **Inter** est hébergée localement dans `public/assets/InterVariable.
 
 Les composants utilisent les classes Tailwind ; les styles partagés utilisent `@apply`. La navbar possède un contenu centré de 1240 px maximum, avec un fond flouté translucide et une bordure pleine largeur au défilement. Les dimensions du hero se règlent avec `.video-frame`, `.hero-intro` et leurs sélecteurs enfants.
 
+La section contact empile l’adresse e-mail et le bouton sur les écrans de 760 px ou moins. Le bouton occupe la largeur disponible ; le titre et les textes peuvent revenir à la ligne sans déborder.
+
 Les interactions sont dans `src/scripts/interactions.ts` : menu mobile, navigation active, défilement fluide, apparitions et lecteur vidéo. La vidéo de fond est muette et en boucle ; le dialogue de lecture propose le son et les contrôles natifs. La préférence système de réduction des animations désactive la lecture automatique, les apparitions et le défilement animé.
 
 ## Génération et hébergement

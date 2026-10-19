@@ -89,7 +89,7 @@
   "program": {
     "title": "Apprendre. Expérimenter. Avancer.",
     "intro": "Du diagnostic aux expériences pilotes, un parcours qui relie les compétences numériques au monde professionnel.",
-    "note": "Calendrier prévisionnel du projet · du 1er janvier 2026 au 31 décembre 2028. Les modalités des parcours seront précisées par les partenaires.",
+    "note": "Calendrier prévisionnel du projet - du 1er janvier 2026 au 31 décembre 2028. Les modalités des parcours seront précisées par les partenaires.",
     "steps": [
       {
         "year": "2026",
@@ -117,33 +117,33 @@
   "partners": {
     "title": "Des expertises qui se complètent.",
     "intro": "Cinq partenaires réunis autour d’un engagement commun : ouvrir l’accès à la formation et à l’emploi.",
-    "lead": "Chef de file · Navarre",
+    "lead": "Chef de file - Navarre",
     "associate": "Avec l’appui des partenaires associés",
     "items": [
       {
         "name": "Gobierno de Navarra",
         "role": "Coordination et pilotage du projet",
-        "place": "Navarre · ES"
+        "place": "Navarre - ES"
       },
       {
         "name": "TASUBINSA",
         "role": "Formation et inclusion professionnelle",
-        "place": "Navarre · ES"
+        "place": "Navarre - ES"
       },
       {
         "name": "Fundación TeReSA",
         "role": "Contenus numériques et ingénierie de formation",
-        "place": "Navarre · ES"
+        "place": "Navarre - ES"
       },
       {
         "name": "STEP",
         "role": "Formation et expériences pilotes en France",
-        "place": "Pyrénées-Atlantiques · FR"
+        "place": "Pyrénées-Atlantiques - FR"
       },
       {
         "name": "EL MOLINO",
         "role": "Formation adaptée et évaluation des pilotes",
-        "place": "Fundación Ciganda Ferrer · ES"
+        "place": "Fundación Ciganda Ferrer - ES"
       }
     ],
     "associated": [
@@ -160,14 +160,14 @@
     "title": "Et si nous ouvrions de nouvelles perspectives, ensemble ?",
     "text": "Vous représentez une entreprise, un organisme de formation ou un acteur de l’inclusion ? Vous souhaitez en savoir plus sur INCLUS-IA ? Échangeons.",
     "button": "Contacter la coordination",
-    "caption": "Coordination du projet · Gouvernement de Navarre",
+    "caption": "Coordination du projet - Gouvernement de Navarre",
     "emailLabel": "Écrivez-nous",
     "email": "poctefa_empleo@outlook.es",
-    "subject": "Demande d’information — INCLUS-IA"
+    "subject": "Demande d’information - INCLUS-IA"
   },
   "footer": {
     "tagline": "Le numérique au service de l’inclusion.",
-    "funding": "Projet INCLUS-IA · EFA255/06 · Interreg VI-A Espagne–France–Andorre POCTEFA 2021–2027. Cofinancement de 65 % par le Fonds européen de développement régional (FEDER).",
+    "funding": "Projet INCLUS-IA - EFA255/06 - Interreg VI-A Espagne–France–Andorre POCTEFA 2021–2027. Cofinancement de 65 % par le Fonds européen de développement régional (FEDER).",
     "logos": "Emplacement du logo institutionnel",
     "copyright": "© 2026 INCLUS-IA",
     "back": "Retour en haut",
