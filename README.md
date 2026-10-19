@@ -20,7 +20,7 @@ Le serveur démarre sur le port **4321** :
 - [Version française](http://127.0.0.1:4321/fr/)
 - [Version espagnole](http://127.0.0.1:4321/es/)
 
-La route `/` redirige vers `/fr/`. Les modifications des sources sont actualisées automatiquement pendant le développement.
+La route `/` affiche directement la landing page française, sans page de redirection. Les routes `/fr/` et `/es/` restent disponibles. Les modifications des sources sont actualisées automatiquement pendant le développement.
 
 ## Commandes
 
@@ -52,7 +52,7 @@ src/
   components/                Navbar, hero, sections, footer et lecteur vidéo
   layouts/BaseLayout.astro   Structure HTML, métadonnées et styles
   pages/
-    index.astro              Redirection vers le français
+    index.astro              Landing page française à la racine
     fr/index.astro           Page française
     es/index.astro           Page espagnole
   i18n/

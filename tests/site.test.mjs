@@ -41,8 +41,11 @@ test('Local video, font, and fallback poster are shipped in the static build', a
 });
 
 
-test('The unprefixed entry redirects to the French locale', async () => {
+test('The unprefixed entry renders the French landing page without a redirect', async () => {
   const page = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8');
-  assert.match(page, /http-equiv="refresh"/);
-  assert.match(page, /url=\/fr\//);
+  assert.match(page, /<html lang="fr"/);
+  assert.match(page, /Le numérique ouvre les possibles/);
+  assert.match(page, /id="hero-video"/);
+  assert.match(page, /href="\/es\/"/);
+  assert.doesNotMatch(page, /http-equiv="refresh"|Redirecting from/);
 });
