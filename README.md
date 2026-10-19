@@ -1,120 +1,161 @@
-# INCLUS-IA — Astro + Tailwind CSS
+# INCLUS-IA
 
-Migration de la landing page validée vers **Astro 7.4.0**, **Tailwind CSS 4.3.3** et TypeScript. Les composants, textes, couleurs, polices, médias et interactions reprennent la dernière version de la page HTML.
+Landing page du projet de coopération transfrontalière INCLUS-IA, consacrée à l’inclusion professionnelle par le numérique et l’intelligence artificielle. Le site est disponible en français et en espagnol.
 
-## Démarrer
+Le projet utilise **Astro 7.4.0**, **Tailwind CSS 4.3.3** et **TypeScript**. Il génère un site statique, avec des composants partagés et des contenus éditoriaux en JSON.
 
-Prérequis : Node.js **22.22 ou plus récent** (vérifié avec Node 24).
+## Installation et démarrage
+
+Prérequis : **Node.js ≥ 22.22.0** et npm.
+
+Dans le dossier du projet, à côté de `package.json` :
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Ouvrir [la version française](http://127.0.0.1:4321/fr/) ou [la version espagnole](http://127.0.0.1:4321/es/).
+Le serveur démarre sur le port **4321** :
+
+- [Version française](http://127.0.0.1:4321/fr/)
+- [Version espagnole](http://127.0.0.1:4321/es/)
+
+La route `/` redirige vers `/fr/`. Les modifications des sources sont actualisées automatiquement pendant le développement.
+
+## Commandes
+
+| Commande | Utilité |
+| --- | --- |
+| `npm ci` | Installer les dépendances à partir du fichier de verrouillage |
+| `npm run dev` | Démarrer le serveur de développement |
+| `npm run check` | Vérifier les composants Astro et les types TypeScript |
+| `npm run build` | Générer le site statique dans `dist/` |
+| `npm test` | Vérifier le HTML et les ressources du dernier build |
+| `npm run preview` | Servir le dernier build sur le port 4321 |
+
+Les tests nécessitent un build préalable :
 
 ```bash
-npm run check   # Vérification Astro et TypeScript
-npm run build   # Génération statique dans dist/
-npm test        # Tests sur le résultat du build
-npm run preview # Prévisualisation du build
+npm run check
+npm run build
+npm test
 ```
 
-En environnement automatisé sans accès au dossier de configuration personnel, préfixer les commandes Astro par `ASTRO_TELEMETRY_DISABLED=1`.
+Pour prévisualiser la version compilée, arrêter le serveur de développement avec `Ctrl+C`, puis lancer `npm run preview` : les deux commandes utilisent le même port.
 
-## Locales et traductions
-
-Le routage utilise l'i18n native d'Astro : `locales: ['fr', 'es']`, français par défaut et préfixe pour chaque locale.
-
-- `/fr/` : page française.
-- `/es/` : page espagnole.
-- `/` : redirection vers `/fr/` (page de redirection statique après compilation).
-- Les anciens paramètres `?lang=fr` / `?lang=es` sont remplacés par les routes de locale.
-
-Les pages `src/pages/fr/index.astro` et `src/pages/es/index.astro` utilisent le même composant `LandingPage.astro`. Celui-ci choisit la traduction avec `Astro.currentLocale`. Les liens de langue sont générés avec `getRelativeLocaleUrl()` de `astro:i18n`.
-
-Les textes restent éditables en JSON dans :
-
-- `src/i18n/locales/fr.json`
-- `src/i18n/locales/es.json`
-
-Les traductions sont intégrées au HTML lors de la compilation : aucun chargement JSON côté navigateur, aucun remplacement du texte avec `innerHTML`, aucune dépendance à JavaScript pour lire la page. Les liens de langue fonctionnent sans JavaScript ; lorsqu'il est actif, la section courante (`#program`, etc.) est conservée lors d'un changement de langue.
-
-## Structure
+## Structure du projet
 
 ```text
-astro.config.mjs          Configuration Astro, locales, plugin Vite Tailwind
+astro.config.mjs             Configuration Astro, i18n et Tailwind
+package.json                 Dépendances et commandes npm
 src/
-  components/            Sections et composants réutilisables
-  layouts/BaseLayout.astro  Métadonnées, langue HTML, alternates, styles
-  pages/fr/index.astro   Route française
-  pages/es/index.astro   Route espagnole
-  pages/index.astro      Redirection de l'entrée
-  i18n/locales/          Dictionnaires JSON
-  scripts/interactions.ts  Menu, vidéo, animations et navigation active
-  styles/global.css     Thème Tailwind, styles partagés et responsive
-  config.ts             URL application et chemins des médias/logos
-public/assets/           Vidéo, affiche de secours, Inter et licence
-tests/                  Tests du build statique
+  components/                Navbar, hero, sections, footer et lecteur vidéo
+  layouts/BaseLayout.astro   Structure HTML, métadonnées et styles
+  pages/
+    index.astro              Redirection vers le français
+    fr/index.astro           Page française
+    es/index.astro           Page espagnole
+  i18n/
+    index.ts                 Locales et accès aux traductions
+    locales/fr.json          Contenus français
+    locales/es.json          Contenus espagnols
+  config.ts                  URL de l’application, médias et logos
+  scripts/interactions.ts    Menu, vidéo, défilement et animations
+  styles/global.css          Thème Tailwind et styles responsive
+public/
+  assets/                    Vidéo, image de secours et police Inter
+  logos/
+    partners/                Logos des cinq partenaires
+    associated/              Logos des sept associés
+    Logo INCLUSIA.png        Logo du projet
+    poctefa.webp             Logo Interreg POCTEFA / Union européenne
+tests/site.test.mjs           Vérifications du site compilé
+qa/                          Captures de vérification visuelle
+design-qa.md                 Notes de vérification
 ```
 
-## Styles et charte
+## Modifier les textes et les langues
 
-Tailwind est branché via `@tailwindcss/vite`, avec `@import "tailwindcss"`. Les classes utilitaires sont utilisées dans les composants et les styles communs sont factorisés avec `@apply`. Le fichier CSS historique n'est pas chargé.
+Les contenus sont dans `src/i18n/locales/fr.json` et `src/i18n/locales/es.json`. Modifier les mêmes clés dans les deux fichiers pour garder les traductions cohérentes.
 
-Les couleurs et le rayon des blocs sont déclarés dans `@theme` :
+Exemple de contenu à modifier dans le JSON français :
 
-- `brand` : `#DD6365`
-- `blush` : `#F3B6BD`
-- `pale` : `#FAE1E2`
-- `ink` : `#202024`
-- `paper` : `#F6F6F6`
+```json
+"hero": {
+  "title": "Le numérique ouvre les possibles.",
+  "text": "Votre texte de présentation"
+}
+```
 
-Inter variable est embarquée localement dans `public/assets/InterVariable.woff2`, avec sa licence `OFL-Inter.txt`. Les seuils responsive de la page précédente sont conservés : 1100 px pour le menu compact, 760 px pour la disposition mobile.
+Les routes utilisent l’i18n native d’Astro : `/fr/` et `/es/`. Les deux pages partagent `LandingPage.astro`. Les textes sont intégrés au HTML à la compilation et restent lisibles sans JavaScript. Le sélecteur de langue conserve la section courante lorsque JavaScript est actif.
 
-## Vidéo et interactions
+Les coordonnées de contact, l’objet du courriel et les textes du footer se modifient également dans ces JSON. Le bouton de contact ouvre un lien `mailto:` ; aucun serveur d’envoi de courriels n’est configuré.
 
-La vidéo locale est conservée dans `public/assets/INCLUS-IA.mp4`.
+## Remplacer les logos et les médias
 
-- Fond vidéo muet, en boucle, sans recadrage.
-- Boutons de lecture et pause/reprise dans le cadre, sur un dégradé anthracite.
-- Titre et description dans le bloc arrondi anthracite sous la vidéo ; CTA dans le cadre vidéo.
-- Vidéo et bloc hero centrés et limités à 1040 px, titre à 760 px et description à 620 px, avec des marges adaptées au mobile.
-- Lecteur avec son et contrôles natifs dans un dialogue accessible au clavier.
-- La vidéo de fond s'arrête pendant la lecture dans le dialogue et reprend ensuite si elle jouait auparavant.
-- La préférence de mouvement réduit désactive la lecture automatique et les apparitions animées.
+Les chemins sont centralisés dans `src/config.ts` :
 
-Sans JavaScript, tout le contenu et les liens restent disponibles ; le menu interactif et les commandes vidéo enrichies nécessitent JavaScript.
+| Clé | Ressource |
+| --- | --- |
+| `brandLogo` | Logo INCLUS-IA dans la navbar et le footer |
+| `applicationUrl` | Lien « Accéder à l’application » |
+| `videoUrl` | Vidéo locale du hero |
+| `posterUrl` | Image de secours de la vidéo |
+| `partnerLogos` | Logos des partenaires, dans l’ordre des contenus JSON |
+| `associatedLogos` | Logos des associés, dans l’ordre des contenus JSON |
+| `institutionalLogo` | Logo Interreg POCTEFA / Union européenne du footer |
 
-Le contenu de la navbar est centré avec une largeur maximale de 1240 px. Son fond translucide flouté et sa bordure au défilement couvrent toute la page. Le défilement à la molette et les liens d’ancrage sont fluides ; la préférence de réduction des animations est respectée. Le tactile et le clavier conservent leur comportement natif.
+Un fichier placé dans `public/` est référencé **sans le préfixe `public`**. Par exemple :
 
-## Logos et liens
+```ts
+brandLogo: "/logos/Logo INCLUSIA.png",
+institutionalLogo: "/logos/poctefa.webp",
+videoUrl: "/assets/INCLUS-IA.mp4",
+```
 
-Modifier `src/config.ts` :
+Pour remplacer un logo, remplacer le fichier existant ou modifier son chemin dans la configuration. Respecter les majuscules et les extensions des noms de fichiers.
 
-- `brandLogo` : `/logos/Logo INCLUSIA.png`, utilisé dans la navbar et le pied de page.
-- `applicationUrl` : `https://fnp.lxp.andria.ovh/`.
-- `partnerLogos` : cinq chemins, dans l'ordre Gobierno de Navarra, TASUBINSA, Fundación TeReSA, STEP, EL MOLINO.
-- `associatedLogos` : sept chemins, dans l'ordre CRIC Pyrénées, ADAPEI64, LesPEP64, Cap Emploi Béarn, IA Pau, French Tech Pau Béarn, NASERTIC.
-- `institutionalLogo` : un seul logo combiné Interreg POCTEFA / Union européenne.
+Les logos des partenaires suivent cet ordre : Gobierno de Navarra, TASUBINSA, Fundación TeReSA, STEP, EL MOLINO.
 
-Placer les fichiers dans `public/assets/` et utiliser des chemins commençant par `/assets/`. Une valeur `null` conserve l'emplacement traduit.
+Les associés suivent cet ordre : CRIC Pyrénées, ADAPEI64, LesPEP64, Cap Emploi Béarn, IA Pau, French Tech Pau Béarn, NASERTIC.
 
-Le contact reste un lien de messagerie, sans envoi serveur. Les coordonnées et l'objet traduit se modifient dans les JSON.
+Pour ajouter un partenaire ou un associé, ajouter son contenu dans **les deux JSON** et son chemin au même index dans le tableau de logos correspondant. Une valeur `null` affiche un emplacement provisoire pour ces logos. Si `institutionalLogo` vaut `null`, le logo institutionnel est masqué.
 
-## Déploiement
+## Personnaliser le style et les interactions
 
-Après `npm run build`, servir le dossier `dist/` avec un hébergement statique. Aucun adaptateur serveur n'est requis. Les liens de routes utilisent `/fr/` et `/es/` avec une barre oblique finale ; l'hébergement doit servir leurs fichiers `index.html`.
+Le thème se trouve dans `src/styles/global.css`, avec les couleurs déclarées dans `@theme` :
 
-Les ressources utilisent des chemins à la racine (`/assets/`), pour un déploiement à la racine d'un domaine. Pour un hébergement dans un sous-dossier, adapter la configuration `base` et la génération des chemins des médias.
+| Couleur | Valeur |
+| --- | --- |
+| `brand` | `#DD6365` |
+| `blush` | `#F3B6BD` |
+| `pale` | `#FAE1E2` |
+| `ink` | `#202024` |
+| `paper` | `#F6F6F6` |
 
-Aucune publication distante n'a été effectuée. La version HTML précédente est conservée dans le dossier voisin `inclus-ia/`.
+La police **Inter** est hébergée localement dans `public/assets/InterVariable.woff2`. Sa licence est fournie dans `OFL-Inter.txt`.
 
-## Références techniques
+Les composants utilisent les classes Tailwind ; les styles partagés utilisent `@apply`. La navbar possède un contenu centré de 1240 px maximum, avec un fond flouté translucide et une bordure pleine largeur au défilement. Les dimensions du hero se règlent avec `.video-frame`, `.hero-intro` et leurs sélecteurs enfants.
 
-- [i18n Astro](https://docs.astro.build/en/guides/internationalization/)
-- [Tailwind avec Astro](https://tailwindcss.com/docs/installation/framework-guides/astro)
+Les interactions sont dans `src/scripts/interactions.ts` : menu mobile, navigation active, défilement fluide, apparitions et lecteur vidéo. La vidéo de fond est muette et en boucle ; le dialogue de lecture propose le son et les contrôles natifs. La préférence système de réduction des animations désactive la lecture automatique, les apparitions et le défilement animé.
 
-## Logos ajoutés
+## Génération et hébergement
 
-Les fichiers fournis sont dans `public/logos/partners/` et `public/logos/associated/`. Les chemins correspondants sont déjà renseignés dans `src/config.ts`, sans le préfixe `public` (exemple : `/logos/partners/step.png`). NASERTIC est inclus dans les associés français et espagnols. Le logo institutionnel Interreg POCTEFA / Union européenne est intégré depuis `/logos/poctefa.webp`.
+```bash
+npm run build
+npm run preview
+```
+
+Publier le **contenu du dossier `dist/`** sur un hébergement statique. Aucun serveur Node.js ni adaptateur Astro n’est nécessaire pour servir le site généré.
+
+L’hébergement doit servir les fichiers `index.html` des dossiers `/fr/` et `/es/`. Conserver tous les fichiers générés, notamment les dossiers `assets/`, `logos/` et les ressources compilées par Astro.
+
+Les liens et médias utilisent des chemins absolus à la racine du domaine. Pour publier dans un sous-dossier, adapter `base` dans `astro.config.mjs` et les chemins de navigation et de ressources.
+
+## Résoudre les problèmes courants
+
+- **Port 4321 déjà utilisé** : arrêter l’autre serveur ou utiliser `npm run dev -- --port 4322`.
+- **Logo absent** : vérifier le fichier dans `public/`, son nom exact et son chemin sans `public` dans `src/config.ts`.
+- **Ancien contenu en prévisualisation** : relancer `npm run build`, puis recharger la page ; `preview` sert le build existant.
+- **Tests en échec faute de fichiers `dist/`** : exécuter `npm run build` avant `npm test`.
+- **Accès au dossier de configuration Astro bloqué dans un environnement automatisé** : utiliser `ASTRO_TELEMETRY_DISABLED=1 npm run build` (ou la même variable avec `dev` et `check`).
