@@ -1,7 +1,7 @@
 /** Public paths in public/assets; null leaves a translated logo placeholder. */
 export const siteConfig = {
   brandLogo: "/logos/Logo INCLUSIA.png",
-  applicationUrl: "https://fnp.lxp.andria.ovh/",
+  applicationUrl: "#",
   videoUrl: "/assets/INCLUS-IA.mp4",
   posterUrl: "/assets/pyrenees.webp",
   partnerLogos: [
